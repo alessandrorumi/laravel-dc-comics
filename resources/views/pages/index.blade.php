@@ -3,5 +3,13 @@
     <title>Home</title>
 @endsection
 @section('content')
-    <h1>Hello, World!</h1>
+    <h1>Prodotti:</h1>
+    <ul>
+      @foreach ($products as $product)
+      <li>
+        <b>{{ $product -> name }}</b>:
+        {{ $product -> price }}€
+      </li>
+      @endforeach
+    </ul>
 @endsection
