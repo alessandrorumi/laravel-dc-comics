@@ -1,14 +1,13 @@
 @extends('layouts.main-layout')
 @section('head')
-    <title>Home</title>
+    <title>INDEX</title>
 @endsection
 @section('content')
-    <h1>Prodotti:</h1>
+    <h3>Prodotti: {{ count($products)}}</h3>
     <ul>
       @foreach ($products as $product)
       <li>
-        <b>{{ $product -> name }}</b>:
-        {{ $product -> price }}€
+        <b>{{ $product -> name }}</b>
       </li>
       @endforeach
     </ul>
