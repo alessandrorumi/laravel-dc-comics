@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+use App\Http\Controllers\ProductController;
 
-    return view('pages.index');
-});
+Route :: get('/', [EmployeeController :: class, 'index'])->name('users.index');
