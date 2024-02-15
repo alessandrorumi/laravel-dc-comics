@@ -3,11 +3,13 @@
     <title>SHOW</title>
 @endsection
 @section('content')
-    <h3>Prodotto n°: {{ $product -> id }}</h3>
-    <ul>
-      <li>
-        <b>{{ $product -> name }}</b>:
-        {{ $product -> price }}€
-      </li>
-    </ul>
+    <div class="container">
+        <h3 class="mt-5">Prodotto n°: {{ $product->id }}</h3>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ $product->name }}</h5>
+                <p class="card-text">{{ $product->price }}€</p>
+            </div>
+        </div>
+    </div>
 @endsection

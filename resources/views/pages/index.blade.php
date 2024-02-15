@@ -3,15 +3,15 @@
     <title>INDEX</title>
 @endsection
 @section('content')
-    <h3>Prodotti: {{ count($products)}}</h3>
-    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="{{ route('product.create') }}">Aggiungi un nuovo prodotto</a></p>
-    <ul>
-      @foreach ($products as $product)
-        <a href="{{ route('product.show', $product -> id) }}">
-          <li>
-            <b>{{ $product -> name }}</b>
-          </li>
-        </a>
-      @endforeach
-    </ul>
+    <div class="container">
+        <h3 class="mt-5">Prodotti: {{ count($products)}}</h3>
+        <p><a class="btn btn-primary mt-3" href="{{ route('product.create') }}">Aggiungi un nuovo prodotto</a></p>
+        <ul class="list-group mt-3">
+            @foreach ($products as $product)
+                <a href="{{ route('product.show', $product->id) }}" class="list-group-item list-group-item-action">
+                    <b>{{ $product->name }}</b>
+                </a>
+            @endforeach
+        </ul>
+    </div>
 @endsection
