@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <h3>Prodotti: {{ count($products)}}</h3>
-    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="">Aggiungi un nuovo prodotto</a></p>
+    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="{{ route('product.create') }}">Aggiungi un nuovo prodotto</a></p>
     <ul>
       @foreach ($products as $product)
         <a href="{{ route('product.show', $product -> id) }}">
