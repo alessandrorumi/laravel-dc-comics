@@ -13,6 +13,9 @@
                     <a href="{{ route('product.show', $product->id) }}">
                         <b>{{ $product->name }}</b>
                     </a>
+
+                    <a href="{{ route('product.edit', $product->id) }}">Modifica</a>
+
                     <form action="{{ route('product.destroy', $product->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
