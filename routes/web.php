@@ -11,5 +11,7 @@ Route::get('/', [ProductController :: class, 'index'])-> name('product.index');
 Route::get('/product/create', [ProductController :: class, 'create'])-> name('product.create');
 Route::post('/product', [ProductController :: class, 'store'])-> name('product.store');
 
+route::delete('/product/{id}', [ProductController :: class, 'destroy'])-> name('product.destroy');
+
 // Rotta Show (lasciare per ultima per evitare problemi)
 Route :: get('/product/{id}', [ProductController :: class, 'show'])-> name('product.show');
