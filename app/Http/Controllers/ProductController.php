@@ -82,7 +82,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product :: find($id);
+        $data = $request -> all();
+
+        $product-> name = $data['name'];
+        $product-> price = $data['price'];
+
+        $product->save();
+
+        return redirect()-> route('product.index');
     }
 
     /**
