@@ -16,7 +16,7 @@
 
                     <a href="{{ route('product.edit', $product->id) }}">Modifica</a>
 
-                    <form action="{{ route('product.destroy', $product->id) }}" method="POST">
+                    <form action="{{ route('product.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Confermare')">
                         @csrf
                         @method('DELETE')
                         <input type="submit" value="Rimuovi">
