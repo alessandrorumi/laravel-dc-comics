@@ -24,8 +24,20 @@ class ProductFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:3|max:255',
-            'price' => 'required|numeric'
+            'name' => 'required|string|min:3|max:100',
+            'price' => 'required|min:0.01|decimal:0,2'
+        ];
+    }
+    public function messages() {
+
+        return [
+            'name.required' => 'Il campo non può essere vuoto',
+            'name.min' => 'Il nome non può essere inferiore a 3 caratteri',
+            'name.max' => 'Il nome non può essere superiore a 100 caratteri',
+
+            'price.required' => 'Il campo non può essere vuoto',
+            'price.min' => 'Il prezzo non può essere inferiore a 0.01€',
+            'price.decimal' => 'Inserisci un numero (con massimo 2 cifre decimali)',
         ];
     }
 }
