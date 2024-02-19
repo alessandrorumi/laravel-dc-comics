@@ -23,14 +23,14 @@
                         <label for="name">Nome</label>
                         <input type="text" class="form-control" name="name" value="{{ ($product-> name) }}">
                         @error('name')
-                            <div class="alert alert-danger">{{ $message }}</div>
+                            <div class="alert alert-danger">{{ 'Il nome non può essere inferiore a 3 caratteri' }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="price">Prezzo</label>
                         <input type="text" class="form-control" name="price" value="{{ ($product-> price) }}">
                         @error('price')
-                            <div class="alert alert-danger">{{ $message }}</div>
+                            <div class="alert alert-danger">{{ 'Inserisci un numero' }}</div>
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Modifica</button>

@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h3 class="mt-5">Aggiungi un prodotto</h3>
-        @if ($errors->any())
+        {{-- @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -13,7 +13,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+        @endif --}}
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form action="{{ route('product.store') }}" method="POST">
@@ -22,10 +22,16 @@
                     <div class="form-group">
                         <label for="name">Nome</label>
                         <input type="text" class="form-control" name="name">
+                        @error('name')
+                            <div class="alert alert-danger">{{ 'Il nome non può essere inferiore a 3 caratteri' }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="price">Prezzo</label>
                         <input type="text" class="form-control" name="price">
+                        @error('price')
+                            <div class="alert alert-danger">{{ 'Inserisci un numero' }}</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Invia</button>
                 </form>
